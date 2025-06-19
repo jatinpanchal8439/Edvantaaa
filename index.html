@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Document</title>
+      <style>
+     
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #c77070;
+            display: flex;     
+            flex-direction: column;
+          
+   
+           
+            padding: 20px;
+            justify-content: center;
+
+        } 
+        .user-card {
+            background-color: #fff;
+            border: 1px solid #89a882;
+            border-radius: 8px;
+            padding: 20px;
+            width: 300px;
+            
+         
+        }p{
+      
+      padding: 2px;
+      margin:10px ;
+
+   }
+
+        
+
+  
+  
+
+
+        
+
+  </style>
+   </head>
+   <body>
+      <div class="card">hello </div>
+
+      <script>
+   
+        const userData = [
+            {
+                "name": "Alice Johnson",
+                "email": "alice@example.com",
+                "bio": "Frontend developer with a love for UI/UX design."
+            },
+            {
+                "name": "Bob Smith",
+                "email":"bob@gmail.com",
+                "bio":"Backend engineer and  database expert."
+         
+            }];
+        function createUserCard(user) {
+            const card = document.createElement('div');
+            card.classList.add('user-card');
+        
+        
+            const name = document.createElement('h2');
+            name.textContent = user.name;
+            card.appendChild(name); 
+
+            const email =document.createElement('p');
+            email.textContent = user.email;
+            card.appendChild(email);
+            const bio= document.createElement('p')
+            bio.textContent = user.boi;
+            card.appendChild(bio);
+const button = document.crateElement('button');
+button.textContent ="showw Email" 
+ button.addEventListener('click', () => {
+                email.classList.toggle('hidden');
+                bio.classList.toggle('hidden');
+                
+  
+                button.textContent = email.classList.contains('hidden') ? "Show Email" : "Hide Email";
+            });
+            card.appendChild(button);
+return card;
+}
+document.addEventListener('DOMContentLoaded', () => {
+            userData.forEach(user => {
+                const card = createUserCard(user);
+                document.body.appendChild(card);
+            });
+        });     
+  </script>
+   </body>
+</html>
